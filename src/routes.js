@@ -1,0 +1,11 @@
+const express = require('express');
+const routes = express.Router();
+
+routes.get('/',(req, res) => {
+    res.send('Hello World');
+});
+
+const TelegramBotController = require('./controllers/TelegramBotController');
+routes.post('/sendLocation', TelegramBotController.store);
+
+module.exports = routes;
